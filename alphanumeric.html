@@ -1,0 +1,23 @@
+<html>
+<body>
+<p>contains alphabets and numbers</p><br>
+enter a string :
+<input type="text" id="string1"><br>
+<button onclick="alphanumeric()">check</button>
+<script>
+function alphanumeric()
+{
+ var str=document.getElementById("string1").value;
+ var letterNumber = /^[0-9a-zA-Z]+$/;
+ if((str.match(letterNumber)))
+  {
+   document.write("valid");
+  }
+  else
+  {
+   document.write("invalid");
+  }
+}
+</script>
+</body>
+</html>
