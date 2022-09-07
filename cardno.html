@@ -1,0 +1,25 @@
+<html>
+<body>
+<p>contains alphabets and numbers</p><br>
+enter a string :
+<input type="text" id="string1"><br>
+<button onclick="cardnumber()">check</button>
+<script>
+function cardnumber()
+{
+  var str=document.getElementById("string1").value;
+  var cardno = /^(?:3[47][0-9]{13})$/;
+  if(str.match(cardno))
+        {
+      document.write("valid");
+        }
+      else
+        {
+        document.write("Not a valid Amercican Express credit card number!");
+       
+        }
+}
+</script>
+</body>
+</html>
+
