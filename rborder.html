@@ -1,0 +1,107 @@
+<html>
+<head>
+<title> ordered form </title>
+<script>
+function validate()
+{
+var vname=document.reg.form.vname;
+var nom=document.reg.form.nom;
+var phone = document.reg.form.phone;
+var phoneNum = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+var emailAddr=document.reg.form.emailAddr;
+var tof=document.reg.form.tof;
+var roomstatus=document.reg.form.roomstatus;
+if(vname.value.length<=0)
+{
+alert("Name is required");
+vname.focus();
+return false;
+}
+if(nom.value.length<=0)
+{
+alert("Number of members must be 2");
+nom.focus();
+return false;
+}
+if(phone.value.match(phoneNum)) {
+return true;
+}
+else {
+document.getElementById("phone").className = document.getElementById("phone").className + " error";
+return false;
+}
+if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(myForm.emailAddr.value))
+{
+return (true);
+}
+alert("You have entered an invalid email address!")
+if(tof.value.length<=0)
+{
+alert("type of food is required");
+tof.focus();
+return false;
+}
+if(rooms.value.length<=0)
+{
+alert("rooms type is required");
+rooms.focus();
+return false;
+}
+return false;
+}
+</script>
+</head>
+<body>
+<form method="action" name="reg.form" onsubmit="return validate()">
+<table>
+<tr>
+<td> Visitor name:</td>
+<td><input type="text" name="vname"></td>
+</tr>
+<tr>
+<td> Number Of Members:</td>
+<td><input type="number" size="2" name="nom"></td>
+</tr>
+<tr>
+<td> Contact Number:</td>
+<td><input type="Number" name="phone"></td>
+</tr>
+<tr>
+<td> Email:</td>
+<td><input type="email" name="emailAddr"></td>
+</tr>
+<tr>
+<td> Tyoe Of Food:</td>
+<td><input type="radio" name="tof" value="southIndian"> SouthIndian
+<input type="radio" name="tof" value="northIndian"> NorthIndian
+<input type="radio" name="tof" value="chinese">Chinese
+<input type="radio" name="tof" value="western"> Western</td>
+</tr>
+<tr>
+<td> Room Status:</td>
+<td><input type="radio" name="rooms" value="ac"> AC
+<input type="radio" name="rooms" value="non-ac"> NON-AC
+</td>
+</tr>
+<tr>
+<td><label for="venue">Venue:</label></td>
+<td><select name="Venue" id="venue">
+    <option value="Arena">Arena</option>
+    <option value="Fiesta">Fiesta</option>
+    <option value="Vista">Vista</option>
+    <option value="Mythri">Mythri</option>
+    <option value="Magna">Magna</option>
+    <option value="Oasis">Oasis</option>
+    <option value="Amoeba" disabled>Amoeba</option></td>
+</select>
+</tr>
+<br><br>
+<td>
+<input type="submit" value="Book"></td>
+<td>
+<input type="reset" value="Reset"></td>
+</tr>
+</table>
+</form>
+</body>
+</html>
